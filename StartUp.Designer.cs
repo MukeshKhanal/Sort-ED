@@ -33,7 +33,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,13 +59,6 @@
             this.metroProgressBar1.TabIndex = 1;
             this.metroProgressBar1.Value = 5;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(406, 27);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(485, 23);
-            this.progressBar1.TabIndex = 2;
-            // 
             // StartUp
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
@@ -75,7 +67,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1240, 765);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.metroProgressBar1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -91,6 +82,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
-        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
