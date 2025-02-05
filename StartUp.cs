@@ -15,6 +15,41 @@ namespace SortED
         public StartUp()
         {
             InitializeComponent();
+            metroProgressBar1.Minimum = 0;
+            metroProgressBar1.Maximum = 100;
+            metroProgressBar1.Value = 0;
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 100;
+            progressBar1.Value = 0;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (metroProgressBar1.Value < metroProgressBar1.Maximum)
+            {
+                metroProgressBar1.Value += 2; // Adjust speed
+                metroProgressBar1.ForeColor = ColorTranslator.FromHtml("#5e16ea");
+            }
+            else
+            {
+                timer1.Stop();
+                Form Form1  = new SorterWindow();
+                Form1.Show();
+                this.Hide(); // Hide startup form
+            }
+            if (progressBar1.Value < progressBar1.Maximum)
+            {
+                progressBar1.ForeColor = ColorTranslator.FromHtml("#FFD700");
+                progressBar1.Value += 2; // Adjust speed
+            }
+            else
+            {
+                timer1.Stop();
+                Form Form1 = new SorterWindow();
+                Form1.Show();
+                this.Hide(); // Hide startup form
+            }
         }
     }
 }

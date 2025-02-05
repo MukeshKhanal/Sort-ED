@@ -65,7 +65,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.view);
             this.panel2.Controls.Add(this.Searchbtn);
             this.panel2.Location = new System.Drawing.Point(925, 48);
@@ -135,7 +135,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1240, 765);
             this.Controls.Add(this.sort);
@@ -147,6 +148,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SorterWindow";
             this.Text = "SortED";
+            this.Load += new System.EventHandler(this.SorterWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.navPanel.ResumeLayout(false);

@@ -35,5 +35,10 @@ namespace SortED
            
            
         }
+
+        private void SorterWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
