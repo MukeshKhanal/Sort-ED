@@ -52,9 +52,9 @@
             this.FileBrowser.Controls.Add(this.label2);
             this.FileBrowser.Controls.Add(this.label1);
             this.FileBrowser.Controls.Add(this.browse);
-            this.FileBrowser.Location = new System.Drawing.Point(168, 74);
+            this.FileBrowser.Location = new System.Drawing.Point(134, 74);
             this.FileBrowser.Name = "FileBrowser";
-            this.FileBrowser.Size = new System.Drawing.Size(722, 328);
+            this.FileBrowser.Size = new System.Drawing.Size(756, 328);
             this.FileBrowser.TabIndex = 0;
             // 
             // label2
@@ -148,15 +148,15 @@
             this.navPanel.Controls.Add(this.pictureBox1);
             this.navPanel.Location = new System.Drawing.Point(12, 48);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(141, 609);
+            this.navPanel.Size = new System.Drawing.Size(82, 658);
             this.navPanel.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(56, 66);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -169,7 +169,7 @@
             this.sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sort.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sort.ForeColor = System.Drawing.Color.White;
-            this.sort.Location = new System.Drawing.Point(458, 408);
+            this.sort.Location = new System.Drawing.Point(424, 408);
             this.sort.Name = "sort";
             this.sort.Size = new System.Drawing.Size(152, 49);
             this.sort.TabIndex = 1;

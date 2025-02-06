@@ -23,7 +23,8 @@ namespace SortED
             ApplyRoundedCorners(Searchbtn, 45);
             ApplyRoundedCorners(Uploaderpanel, 25);
             ApplyRoundedCorners(Fileviewers, 25);
-           
+            ApplyRoundedCorners(FileBrowser, 25);
+
         }
 
         //this is the custom method which will be used to round corner in any controls in the given form
