@@ -16,6 +16,7 @@ namespace SortED
         public SorterWindow()
         {
             InitializeComponent();
+<<<<<<< HEAD
             ApplyRoundedCorners(navPanel, 20);
             ApplyRoundedCorners(browse, 20);
             ApplyRoundedCorners(sort, 20);
@@ -24,6 +25,17 @@ namespace SortED
             ApplyRoundedCorners(Uploaderpanel, 20);
             ApplyRoundedCorners(Fileviewers, 20);
            
+=======
+            ApplyRoundedCorners(navPanel, 25);
+            ApplyRoundedCorners(browse, 45);
+            ApplyRoundedCorners(sort, 45);
+            ApplyRoundedCorners(view, 45);
+            ApplyRoundedCorners(Searchbtn, 45);
+            ApplyRoundedCorners(Uploaderpanel, 25);
+            ApplyRoundedCorners(Fileviewers, 25);
+            ApplyRoundedCorners(FileBrowser, 25);
+
+>>>>>>> c483bb0684531b6e8374d3d2d802aa7ed0712535
         }
 
         //this is the custom method which will be used to round corner in any controls in the given form
