@@ -16,13 +16,13 @@ namespace SortED
         public SorterWindow()
         {
             InitializeComponent();
-            ApplyRoundedCorners(navPanel, 25);
-            ApplyRoundedCorners(browse, 45);
-            ApplyRoundedCorners(sort, 45);
-            ApplyRoundedCorners(view, 45);
-            ApplyRoundedCorners(Searchbtn, 45);
-            ApplyRoundedCorners(Uploaderpanel, 25);
-            ApplyRoundedCorners(Fileviewers, 25);
+            ApplyRoundedCorners(navPanel, 20);
+            ApplyRoundedCorners(browse, 20);
+            ApplyRoundedCorners(sort, 20);
+            ApplyRoundedCorners(view, 20);
+            ApplyRoundedCorners(Searchbtn, 20);
+            ApplyRoundedCorners(Uploaderpanel, 20);
+            ApplyRoundedCorners(Fileviewers, 20);
            
         }
 

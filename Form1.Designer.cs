@@ -40,8 +40,15 @@
             this.navPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sort = new System.Windows.Forms.Button();
+            this.SearchTxt = new System.Windows.Forms.TextBox();
+            this.sorted = new System.Windows.Forms.Label();
+            this.recentlyUploaded = new System.Windows.Forms.ListView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.filesUploaded = new System.Windows.Forms.ListView();
+            this.label4 = new System.Windows.Forms.Label();
             this.FileBrowser.SuspendLayout();
             this.Fileviewers.SuspendLayout();
+            this.Uploaderpanel.SuspendLayout();
             this.navPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +104,10 @@
             // Fileviewers
             // 
             this.Fileviewers.BackColor = System.Drawing.Color.White;
+            this.Fileviewers.Controls.Add(this.label4);
+            this.Fileviewers.Controls.Add(this.recentlyUploaded);
+            this.Fileviewers.Controls.Add(this.sorted);
+            this.Fileviewers.Controls.Add(this.SearchTxt);
             this.Fileviewers.Controls.Add(this.view);
             this.Fileviewers.Controls.Add(this.Searchbtn);
             this.Fileviewers.Location = new System.Drawing.Point(925, 48);
@@ -127,7 +138,7 @@
             this.Searchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Searchbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Searchbtn.ForeColor = System.Drawing.Color.White;
-            this.Searchbtn.Location = new System.Drawing.Point(70, 152);
+            this.Searchbtn.Location = new System.Drawing.Point(41, 122);
             this.Searchbtn.Name = "Searchbtn";
             this.Searchbtn.Size = new System.Drawing.Size(158, 44);
             this.Searchbtn.TabIndex = 3;
@@ -137,6 +148,8 @@
             // Uploaderpanel
             // 
             this.Uploaderpanel.BackColor = System.Drawing.Color.White;
+            this.Uploaderpanel.Controls.Add(this.filesUploaded);
+            this.Uploaderpanel.Controls.Add(this.label3);
             this.Uploaderpanel.Location = new System.Drawing.Point(178, 463);
             this.Uploaderpanel.Name = "Uploaderpanel";
             this.Uploaderpanel.Size = new System.Drawing.Size(712, 275);
@@ -154,7 +167,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(78, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,6 +189,67 @@
             this.sort.Text = "Sort It";
             this.sort.UseVisualStyleBackColor = false;
             // 
+            // SearchTxt
+            // 
+            this.SearchTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTxt.Location = new System.Drawing.Point(14, 67);
+            this.SearchTxt.Name = "SearchTxt";
+            this.SearchTxt.Size = new System.Drawing.Size(256, 34);
+            this.SearchTxt.TabIndex = 5;
+            // 
+            // sorted
+            // 
+            this.sorted.AutoSize = true;
+            this.sorted.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sorted.ForeColor = System.Drawing.Color.DarkBlue;
+            this.sorted.Location = new System.Drawing.Point(35, 282);
+            this.sorted.Name = "sorted";
+            this.sorted.Size = new System.Drawing.Size(175, 31);
+            this.sorted.TabIndex = 6;
+            this.sorted.Text = "Recently Sorted";
+            // 
+            // recentlyUploaded
+            // 
+            this.recentlyUploaded.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recentlyUploaded.HideSelection = false;
+            this.recentlyUploaded.Location = new System.Drawing.Point(19, 334);
+            this.recentlyUploaded.Name = "recentlyUploaded";
+            this.recentlyUploaded.Size = new System.Drawing.Size(238, 246);
+            this.recentlyUploaded.TabIndex = 7;
+            this.recentlyUploaded.UseCompatibleStateImageBehavior = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(15, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(174, 31);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Uploaded Files:";
+            // 
+            // filesUploaded
+            // 
+            this.filesUploaded.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filesUploaded.HideSelection = false;
+            this.filesUploaded.Location = new System.Drawing.Point(21, 64);
+            this.filesUploaded.Name = "filesUploaded";
+            this.filesUploaded.Size = new System.Drawing.Size(631, 199);
+            this.filesUploaded.TabIndex = 8;
+            this.filesUploaded.UseCompatibleStateImageBehavior = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label4.Location = new System.Drawing.Point(35, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(210, 31);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Search Sorted Files";
+            // 
             // SorterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -196,6 +270,9 @@
             this.FileBrowser.ResumeLayout(false);
             this.FileBrowser.PerformLayout();
             this.Fileviewers.ResumeLayout(false);
+            this.Fileviewers.PerformLayout();
+            this.Uploaderpanel.ResumeLayout(false);
+            this.Uploaderpanel.PerformLayout();
             this.navPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -215,6 +292,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox SearchTxt;
+        private System.Windows.Forms.ListView recentlyUploaded;
+        private System.Windows.Forms.Label sorted;
+        private System.Windows.Forms.ListView filesUploaded;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

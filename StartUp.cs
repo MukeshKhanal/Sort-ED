@@ -25,7 +25,7 @@ namespace SortED
         {
             if (progressBar1.Value < progressBar1.Maximum)
             {
-                progressBar1.Value += 2; // Adjust speed
+                progressBar1.Value += 2; //We might need to change speed
 
             }
             else
@@ -33,7 +33,7 @@ namespace SortED
                 timer1.Stop();
                 Form Form1 = new SorterWindow();
                 Form1.Show();
-                this.Hide(); // Hide startup form
+                this.Hide();
             }
         }
         }
