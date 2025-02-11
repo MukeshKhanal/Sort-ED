@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SortED
 {
@@ -16,7 +17,7 @@ namespace SortED
         public SorterWindow()
         {
             InitializeComponent();
-<<<<<<< HEAD
+ 
             ApplyRoundedCorners(navPanel, 20);
             ApplyRoundedCorners(browse, 20);
             ApplyRoundedCorners(sort, 20);
@@ -24,18 +25,10 @@ namespace SortED
             ApplyRoundedCorners(Searchbtn, 20);
             ApplyRoundedCorners(Uploaderpanel, 20);
             ApplyRoundedCorners(Fileviewers, 20);
+    
            
-=======
-            ApplyRoundedCorners(navPanel, 25);
-            ApplyRoundedCorners(browse, 45);
-            ApplyRoundedCorners(sort, 45);
-            ApplyRoundedCorners(view, 45);
-            ApplyRoundedCorners(Searchbtn, 45);
-            ApplyRoundedCorners(Uploaderpanel, 25);
-            ApplyRoundedCorners(Fileviewers, 25);
-            ApplyRoundedCorners(FileBrowser, 25);
 
->>>>>>> c483bb0684531b6e8374d3d2d802aa7ed0712535
+
         }
 
         //this is the custom method which will be used to round corner in any controls in the given form
@@ -54,6 +47,17 @@ namespace SortED
             control.Region = new Region(path);
         }
 
-       
+        private void browse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select files to sort";
+            ofd.InitialDirectory = @"C:\";
+            ofd.ShowDialog();
+            string FileGoodName = Path.GetFileName(ofd.FileName.Trim());
+            if (ofd.FileName != "")
+            {
+                filesUploaded.Items.Add(FileGoodName);
+            }
+        }
     }
 }
