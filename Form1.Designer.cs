@@ -55,6 +55,7 @@
             // 
             // FileBrowser
             // 
+            this.FileBrowser.AllowDrop = true;
             this.FileBrowser.BackColor = System.Drawing.Color.White;
             this.FileBrowser.Controls.Add(this.label2);
             this.FileBrowser.Controls.Add(this.label1);
@@ -63,6 +64,9 @@
             this.FileBrowser.Name = "FileBrowser";
             this.FileBrowser.Size = new System.Drawing.Size(756, 328);
             this.FileBrowser.TabIndex = 0;
+            this.FileBrowser.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileBrowser_DragDrop);
+            this.FileBrowser.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileBrowser_DragEnter);
+            this.FileBrowser.DragLeave += new System.EventHandler(this.FileBrowser_DragLeave);
             // 
             // label2
             // 

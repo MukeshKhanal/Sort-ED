@@ -59,5 +59,47 @@ namespace SortED
                 filesUploaded.Items.Add(FileGoodName);
             }
         }
+
+        private void FileBrowser_DragDrop(object sender, DragEventArgs e)
+        {
+            Array filenames;
+            if (e.Data != null)
+            {
+                filenames = (Array)e.Data.GetData(DataFormats.FileDrop);
+                foreach (string i in filenames)
+                {
+                    string FileGoodName = Path.GetFileName(i.Trim());
+                    filesUploaded.Items.Add(FileGoodName);
+                }
+            }
+
+        }
+
+        private void FileBrowser_DragEnter(object sender, DragEventArgs e)
+        {
+
+            if (e.Data != null)
+            {
+                if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                {
+                    e.Effect = DragDropEffects.Copy;
+                    FileBrowser.BackColor = Color.LightGray;
+                    label1.ForeColor = Color.Black;
+                    label2.ForeColor = Color.Black;
+                }
+                else
+                {
+                    e.Effect= DragDropEffects.None;
+                }
+
+            }
+        }
+
+        private void FileBrowser_DragLeave(object sender, EventArgs e)
+        {
+            FileBrowser.BackColor = Color.White;
+            label1.ForeColor = Color.RoyalBlue;
+            label2.ForeColor = Color.RoyalBlue;
+        }
     }
 }
