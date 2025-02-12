@@ -50,6 +50,7 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.progressBar1.Location = new System.Drawing.Point(365, 488);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(506, 43);
@@ -66,6 +67,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartUp";
             this.Text = "StartUp";
+            this.Load += new System.EventHandler(this.StartUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

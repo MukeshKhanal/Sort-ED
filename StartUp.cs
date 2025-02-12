@@ -36,7 +36,12 @@ namespace SortED
                 this.Hide();
             }
         }
+
+        private void StartUp_Load(object sender, EventArgs e)
+        {
+            this.progressBar1.ForeColor = Color.Red;
         }
+    }
 
 
 }
