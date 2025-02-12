@@ -41,11 +41,11 @@
             this.view = new System.Windows.Forms.Button();
             this.Searchbtn = new System.Windows.Forms.Button();
             this.Uploaderpanel = new System.Windows.Forms.Panel();
-            this.filesUploaded = new System.Windows.Forms.ListView();
             this.label3 = new System.Windows.Forms.Label();
             this.navPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sort = new System.Windows.Forms.Button();
+            this.fileUploaded = new System.Windows.Forms.ListBox();
             this.FileBrowser.SuspendLayout();
             this.Fileviewers.SuspendLayout();
             this.Uploaderpanel.SuspendLayout();
@@ -193,23 +193,12 @@
             // Uploaderpanel
             // 
             this.Uploaderpanel.BackColor = System.Drawing.Color.White;
-            this.Uploaderpanel.Controls.Add(this.filesUploaded);
+            this.Uploaderpanel.Controls.Add(this.fileUploaded);
             this.Uploaderpanel.Controls.Add(this.label3);
             this.Uploaderpanel.Location = new System.Drawing.Point(178, 463);
             this.Uploaderpanel.Name = "Uploaderpanel";
             this.Uploaderpanel.Size = new System.Drawing.Size(712, 275);
             this.Uploaderpanel.TabIndex = 1;
-            // 
-            // filesUploaded
-            // 
-            this.filesUploaded.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filesUploaded.HideSelection = false;
-            this.filesUploaded.LabelWrap = false;
-            this.filesUploaded.Location = new System.Drawing.Point(21, 64);
-            this.filesUploaded.Name = "filesUploaded";
-            this.filesUploaded.Size = new System.Drawing.Size(631, 199);
-            this.filesUploaded.TabIndex = 8;
-            this.filesUploaded.UseCompatibleStateImageBehavior = false;
             // 
             // label3
             // 
@@ -256,6 +245,16 @@
             this.sort.Text = "Sort It";
             this.sort.UseVisualStyleBackColor = false;
             // 
+            // fileUploaded
+            // 
+            this.fileUploaded.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileUploaded.FormattingEnabled = true;
+            this.fileUploaded.ItemHeight = 28;
+            this.fileUploaded.Location = new System.Drawing.Point(51, 49);
+            this.fileUploaded.Name = "fileUploaded";
+            this.fileUploaded.Size = new System.Drawing.Size(587, 200);
+            this.fileUploaded.TabIndex = 9;
+            // 
             // SorterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -301,9 +300,9 @@
         private System.Windows.Forms.TextBox SearchTxt;
         private System.Windows.Forms.ListView recentlyUploaded;
         private System.Windows.Forms.Label sorted;
-        private System.Windows.Forms.ListView filesUploaded;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox fileUploaded;
     }
 }
 

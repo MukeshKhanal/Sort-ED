@@ -56,7 +56,7 @@ namespace SortED
             string FileGoodName = Path.GetFileName(ofd.FileName.Trim());
             if (ofd.FileName != "")
             {
-                filesUploaded.Items.Add(FileGoodName);
+                fileUploaded.Items.Add(FileGoodName);
             }
         }
 
@@ -69,7 +69,7 @@ namespace SortED
                 foreach (string i in filenames)
                 {
                     string FileGoodName = Path.GetFileName(i.Trim());
-                    filesUploaded.Items.Add(FileGoodName);
+                    fileUploaded.Items.Add(FileGoodName);
                 }
             }
 
@@ -78,20 +78,15 @@ namespace SortED
         private void FileBrowser_DragEnter(object sender, DragEventArgs e)
         {
 
-            if (e.Data != null)
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                {
-                    e.Effect = DragDropEffects.Copy;
-                    FileBrowser.BackColor = Color.LightGray;
-                    label1.ForeColor = Color.Black;
-                    label2.ForeColor = Color.Black;
-                }
-                else
-                {
-                    e.Effect= DragDropEffects.None;
-                }
+                string[] filenames = (string[])e.Data.GetData(DataFormats.FileDrop);
 
+                foreach (string file in filenames)
+                {
+                    string FileGoodName = Path.GetFileName(file.Trim());
+                    fileUploaded.Items.Add(FileGoodName);  // Adds each file as a separate item
+                }
             }
         }
 
