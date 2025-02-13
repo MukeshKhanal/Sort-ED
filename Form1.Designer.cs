@@ -196,9 +196,9 @@
             this.Uploaderpanel.BackColor = System.Drawing.Color.White;
             this.Uploaderpanel.Controls.Add(this.fileUploaded);
             this.Uploaderpanel.Controls.Add(this.label3);
-            this.Uploaderpanel.Location = new System.Drawing.Point(178, 463);
+            this.Uploaderpanel.Location = new System.Drawing.Point(134, 482);
             this.Uploaderpanel.Name = "Uploaderpanel";
-            this.Uploaderpanel.Size = new System.Drawing.Size(712, 275);
+            this.Uploaderpanel.Size = new System.Drawing.Size(756, 275);
             this.Uploaderpanel.TabIndex = 1;
             // 
             // fileUploaded
@@ -264,14 +264,16 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = global::SortED.Properties.Resources.bckg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1240, 765);
+            this.ClientSize = new System.Drawing.Size(1223, 786);
             this.Controls.Add(this.sort);
             this.Controls.Add(this.navPanel);
             this.Controls.Add(this.Uploaderpanel);
             this.Controls.Add(this.Fileviewers);
             this.Controls.Add(this.FileBrowser);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SorterWindow";
             this.Text = "SortED";
             this.FileBrowser.ResumeLayout(false);

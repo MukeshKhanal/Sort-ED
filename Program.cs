@@ -16,7 +16,14 @@ namespace SortED
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartUp());
+
+            using (StartUp startUp = new StartUp()) 
+            { 
+                startUp.ShowDialog();
+            
+            
+            }
+            Application.Run(new SorterWindow());
         }
     }
 }

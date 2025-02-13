@@ -30,17 +30,13 @@ namespace SortED
             }
             else
             {
-                timer1.Stop();
-                Form Form1 = new SorterWindow();
-                Form1.Show();
-                this.Hide();
+                timer1.Stop();                
+                this.Close();
+                
             }
         }
 
-        private void StartUp_Load(object sender, EventArgs e)
-        {
-            this.progressBar1.ForeColor = Color.Red;
-        }
+        
     }
 
 

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing;
+
 
 namespace SortED
 {
@@ -185,6 +185,15 @@ namespace SortED
                     Directory.CreateDirectory(folderDestination);
                 }
                 string newDest = Path.Combine(folderDestination, Path.GetFileName(file));
+
+                int filecount = 1;
+
+                while (File.Exists(newDest))
+                {
+                    newDest = Path.Combine(folderDestination + Path.GetFileNameWithoutExtension(file)+ filecount + Path.GetFileName(file));
+
+                }
+
                 File.Move(file, newDest);
 
             }

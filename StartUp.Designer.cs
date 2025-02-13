@@ -64,10 +64,11 @@
             this.ClientSize = new System.Drawing.Size(1240, 765);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartUp";
             this.Text = "StartUp";
-            this.Load += new System.EventHandler(this.StartUp_Load);
+            //this.Load += new System.EventHandler(this.StartUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
