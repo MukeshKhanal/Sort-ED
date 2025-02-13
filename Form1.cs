@@ -57,6 +57,7 @@ namespace SortED
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select files to sort";
             ofd.InitialDirectory = @"C:\";
+            ofd.Multiselect = true;
             ofd.ShowDialog();
             string FileGoodName = Path.GetFileName(ofd.FileName.Trim());
             if (ofd.FileName != "")
@@ -170,7 +171,6 @@ namespace SortED
                         return broswer.SelectedPath;
                     };
                 }
-
             }
             return null;
 
