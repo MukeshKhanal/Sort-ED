@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
 
 namespace SortED
 {
@@ -23,6 +24,9 @@ namespace SortED
         {
             InitializeComponent();
 
+            fileUploaded.DrawMode = DrawMode.OwnerDrawFixed;
+            fileUploaded.DrawItem += new DrawItemEventHandler(fileUploaded_DrawItem);
+
             ApplyRoundedCorners(navPanel, 20);
             ApplyRoundedCorners(browse, 20);
             ApplyRoundedCorners(sort, 20);
@@ -36,7 +40,7 @@ namespace SortED
 
         }
 
-        //this is the custom method which will be used to round corner in any controls in the given form
+        
         private void ApplyRoundedCorners(Control control, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -51,36 +55,72 @@ namespace SortED
 
             control.Region = new Region(path);
         }
+        private void fileUploaded_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            
+            FileItem item = (FileItem)fileUploaded.Items[e.Index];
+
+            
+            e.DrawBackground();
+
+            
+            e.Graphics.DrawIcon(item.FileIcon, e.Bounds.Left, e.Bounds.Top);
+
+            
+            Rectangle textBounds = new Rectangle(e.Bounds.Left + item.FileIcon.Width + 5, e.Bounds.Top, e.Bounds.Width - item.FileIcon.Width - 5, e.Bounds.Height);
+
+            e.Graphics.DrawString(item.FileName, e.Font, Brushes.Black, textBounds);
+
+            e.DrawFocusRectangle();
+        }
 
         private void browse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select files to sort";
-            ofd.InitialDirectory = @"C:\";
-            ofd.Multiselect = true;
-            ofd.ShowDialog();
-            string FileGoodName = Path.GetFileName(ofd.FileName.Trim());
-            if (ofd.FileName != "")
+            ofd.InitialDirectory = @"C:\";  
+            ofd.Multiselect = true;  
+
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                selectedFiles.Add(ofd.FileName);
-                fileUploaded.Items.Add(FileGoodName);
+                foreach (string filePath in ofd.FileNames)  
+                {
+                    string FileGoodName = Path.GetFileName(filePath.Trim());  
+
+                    Icon iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(filePath);
+
+
+                    selectedFiles.Add(filePath);  
+                    fileUploaded.Items.Add(new FileItem { FileName = FileGoodName, FileIcon = iconForFile }); 
+                }
             }
         }
+
 
         private void FileBrowser_DragDrop(object sender, DragEventArgs e)
         {
             Array filenames;
+            Icon iconForFile;
+
+            
             if (e.Data != null)
             {
                 filenames = (Array)e.Data.GetData(DataFormats.FileDrop);
+
                 foreach (string i in filenames)
                 {
                     string FileGoodName = Path.GetFileName(i.Trim());
                     selectedFiles.Add(FileGoodName);
+                    iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(i);
+
+
                     fileUploaded.Items.Add(FileGoodName);
+
+                    fileUploaded.Items[fileUploaded.Items.Count - 1] = new FileItem { FileName = FileGoodName, FileIcon = iconForFile };
                 }
             }
-
         }
 
         private void FileBrowser_DragEnter(object sender, DragEventArgs e)
@@ -184,6 +224,11 @@ namespace SortED
         {
             return File.Exists(filePath);
         }
+    }
+    public class FileItem
+    {
+        public string FileName { get; set; }
+        public Icon FileIcon { get; set; }
     }
 }
 
