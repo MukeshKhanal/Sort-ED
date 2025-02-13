@@ -80,7 +80,7 @@ namespace SortED
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select files to sort";
-            ofd.InitialDirectory = @"C:\";  
+            ofd.InitialDirectory = @"C:\Desktop";  
             ofd.Multiselect = true;  
 
             if (ofd.ShowDialog() == DialogResult.OK)
