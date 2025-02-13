@@ -41,11 +41,12 @@
             this.view = new System.Windows.Forms.Button();
             this.Searchbtn = new System.Windows.Forms.Button();
             this.Uploaderpanel = new System.Windows.Forms.Panel();
+            this.fileUploaded = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.navPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sort = new System.Windows.Forms.Button();
-            this.fileUploaded = new System.Windows.Forms.ListBox();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.FileBrowser.SuspendLayout();
             this.Fileviewers.SuspendLayout();
             this.Uploaderpanel.SuspendLayout();
@@ -200,6 +201,16 @@
             this.Uploaderpanel.Size = new System.Drawing.Size(712, 275);
             this.Uploaderpanel.TabIndex = 1;
             // 
+            // fileUploaded
+            // 
+            this.fileUploaded.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileUploaded.FormattingEnabled = true;
+            this.fileUploaded.ItemHeight = 28;
+            this.fileUploaded.Location = new System.Drawing.Point(51, 49);
+            this.fileUploaded.Name = "fileUploaded";
+            this.fileUploaded.Size = new System.Drawing.Size(587, 200);
+            this.fileUploaded.TabIndex = 9;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -244,16 +255,7 @@
             this.sort.TabIndex = 1;
             this.sort.Text = "Sort It";
             this.sort.UseVisualStyleBackColor = false;
-            // 
-            // fileUploaded
-            // 
-            this.fileUploaded.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileUploaded.FormattingEnabled = true;
-            this.fileUploaded.ItemHeight = 28;
-            this.fileUploaded.Location = new System.Drawing.Point(51, 49);
-            this.fileUploaded.Name = "fileUploaded";
-            this.fileUploaded.Size = new System.Drawing.Size(587, 200);
-            this.fileUploaded.TabIndex = 9;
+            this.sort.Click += new System.EventHandler(this.sort_Click);
             // 
             // SorterWindow
             // 
@@ -303,6 +305,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox fileUploaded;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
 

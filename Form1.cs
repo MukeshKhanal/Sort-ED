@@ -14,10 +14,15 @@ namespace SortED
 {
     public partial class SorterWindow : Form
     {
+        private List<string> selectedFiles = new List<string>();
+        private Sorter sortManager = new Sorter();
+        private DestMgmer DestMgmer=new DestMgmer();
+        
+
         public SorterWindow()
         {
             InitializeComponent();
- 
+
             ApplyRoundedCorners(navPanel, 20);
             ApplyRoundedCorners(browse, 20);
             ApplyRoundedCorners(sort, 20);
@@ -25,8 +30,8 @@ namespace SortED
             ApplyRoundedCorners(Searchbtn, 20);
             ApplyRoundedCorners(Uploaderpanel, 20);
             ApplyRoundedCorners(Fileviewers, 20);
-    
-           
+
+
 
 
         }
@@ -35,7 +40,7 @@ namespace SortED
         private void ApplyRoundedCorners(Control control, int radius)
         {
             GraphicsPath path = new GraphicsPath();
-            
+
             Rectangle rect = new Rectangle(0, 0, control.Width, control.Height);
 
             path.AddArc(rect.X, rect.Y, radius, radius, 180, 90); // Top-left
@@ -56,6 +61,7 @@ namespace SortED
             string FileGoodName = Path.GetFileName(ofd.FileName.Trim());
             if (ofd.FileName != "")
             {
+                selectedFiles.Add(ofd.FileName);
                 fileUploaded.Items.Add(FileGoodName);
             }
         }
@@ -69,6 +75,7 @@ namespace SortED
                 foreach (string i in filenames)
                 {
                     string FileGoodName = Path.GetFileName(i.Trim());
+                    selectedFiles.Add(FileGoodName);
                     fileUploaded.Items.Add(FileGoodName);
                 }
             }
@@ -85,7 +92,7 @@ namespace SortED
                 foreach (string file in filenames)
                 {
                     string FileGoodName = Path.GetFileName(file.Trim());
-                    fileUploaded.Items.Add(FileGoodName);  // Adds each file as a separate item
+                    fileUploaded.Items.Add(FileGoodName);  
                 }
             }
         }
@@ -96,5 +103,89 @@ namespace SortED
             label1.ForeColor = Color.RoyalBlue;
             label2.ForeColor = Color.RoyalBlue;
         }
+
+        private void sort_Click(object sender, EventArgs e)
+        {
+            if (selectedFiles.Count == 0)
+            {
+                MessageBox.Show("No files to sort");
+                return;
+            }
+            string destpath = DestMgmer.GetDestination();
+            if (string.IsNullOrEmpty(destpath)) return;
+
+            sortManager.SortFiles(selectedFiles,destpath);
+            fileUploaded.Items.Clear();
+            selectedFiles.Clear();
+
+            MessageBox.Show("Sucefully Sorted");
+
+        }
+    }
+
+    public class Sorter
+    {
+        public void SortFiles(List<string> files, string destinationPath)
+        {
+            if (!Directory.Exists(destinationPath))
+            {
+                Directory.CreateDirectory(destinationPath);
+            }
+            foreach (var file in files)
+            {
+                if (!FileHandler.IsValidFile(file)) continue;
+
+                string extension = Path.GetExtension(file).TrimStart('.').ToUpper();
+                string folderDestination = Path.Combine(destinationPath, extension);
+
+
+                if (!Directory.Exists(folderDestination))
+                {
+                    Directory.CreateDirectory(folderDestination);
+                }
+                string newDest = Path.Combine(folderDestination, Path.GetFileName(file));
+                File.Move(file, newDest);
+
+            }
+
+
+        }
+    }
+    public class DestMgmer
+    {
+        public string GetDestination()
+        {
+            DialogResult rst = MessageBox.Show("Sort it in Default location? ", " Choose Destination",
+                MessageBoxButtons.YesNoCancel);
+            if (rst == DialogResult.Yes)
+            {
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SortED");
+            }
+            else if(rst == DialogResult.No)
+            {
+                using (FolderBrowserDialog broswer = new FolderBrowserDialog())
+                {
+                    if (broswer.ShowDialog() == DialogResult.OK)
+                    {
+                        return broswer.SelectedPath;
+                    };
+                }
+
+            }
+            return null;
+
+
+
+        }
+    }
+    public static class FileHandler
+    {
+        public static bool IsValidFile(string filePath)
+        {
+            return File.Exists(filePath);
+        }
     }
 }
+
+
+
