@@ -23,7 +23,9 @@ namespace SortED
         public SorterWindow()
         {
             InitializeComponent();
-            this.Cursor = new Cursor(Properties.Resources);
+            //this.Cursor = new Cursor(GetType(), "Pointer.cur");
+            LoadEmbeddedCursor();
+            //this.Cursor = new Cursor(@"E:\4thSem\Major Project\Resources\Pointer.cur");
             fileUploaded.DrawMode = DrawMode.OwnerDrawFixed;
             fileUploaded.DrawItem += new DrawItemEventHandler(fileUploaded_DrawItem);
 
@@ -36,10 +38,23 @@ namespace SortED
             ApplyRoundedCorners(Fileviewers, 20);
 
 
-            //this.Cursor = new Cursor(cursorPath);
-
         }
+        //private void LoadEmbeddedCursor()
+        //{
+        //    string resourceName = "SortED.Resources.Pointer.cur"; // Adjust if your namespace or folder is different
 
+        //    using (Stream cursorStream = GetType().Assembly.GetManifestResourceStream(resourceName))
+        //    {
+        //        if (cursorStream != null)
+        //        {
+        //            this.Cursor = new Cursor(cursorStream);
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Cursor resource not found. Ensure 'Pointer.cur' is embedded.");
+        //        }
+        //    }
+        //}
 
         private void ApplyRoundedCorners(Control control, int radius)
         {
