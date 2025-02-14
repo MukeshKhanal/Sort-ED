@@ -113,10 +113,5 @@
   <ItemGroup>
     <None Include="Resources\3-removebg-preview.png" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Pointer.cur">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
