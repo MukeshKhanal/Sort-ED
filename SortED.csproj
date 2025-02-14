@@ -113,5 +113,10 @@
   <ItemGroup>
     <None Include="Resources\3-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CoolCursor.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,7 +23,7 @@ namespace SortED
         public SorterWindow()
         {
             InitializeComponent();
-
+            this.Cursor = new Cursor(Properties.Resources);
             fileUploaded.DrawMode = DrawMode.OwnerDrawFixed;
             fileUploaded.DrawItem += new DrawItemEventHandler(fileUploaded_DrawItem);
 
@@ -36,11 +36,11 @@ namespace SortED
             ApplyRoundedCorners(Fileviewers, 20);
 
 
-
+            //this.Cursor = new Cursor(cursorPath);
 
         }
 
-        
+
         private void ApplyRoundedCorners(Control control, int radius)
         {
             GraphicsPath path = new GraphicsPath();
