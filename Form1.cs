@@ -23,9 +23,6 @@ namespace SortED
         public SorterWindow()
         {
             InitializeComponent();
-            //this.Cursor = new Cursor(GetType(), "Pointer.cur");
-            LoadEmbeddedCursor();
-            //this.Cursor = new Cursor(@"E:\4thSem\Major Project\Resources\Pointer.cur");
             fileUploaded.DrawMode = DrawMode.OwnerDrawFixed;
             fileUploaded.DrawItem += new DrawItemEventHandler(fileUploaded_DrawItem);
 
@@ -39,22 +36,6 @@ namespace SortED
 
 
         }
-        //private void LoadEmbeddedCursor()
-        //{
-        //    string resourceName = "SortED.Resources.Pointer.cur"; // Adjust if your namespace or folder is different
-
-        //    using (Stream cursorStream = GetType().Assembly.GetManifestResourceStream(resourceName))
-        //    {
-        //        if (cursorStream != null)
-        //        {
-        //            this.Cursor = new Cursor(cursorStream);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Cursor resource not found. Ensure 'Pointer.cur' is embedded.");
-        //        }
-        //    }
-        //}
 
         private void ApplyRoundedCorners(Control control, int radius)
         {
@@ -176,6 +157,20 @@ namespace SortED
 
             MessageBox.Show("Sucefully Sorted");
 
+        }
+
+        private void SorterWindow_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Bitmap bmp = new Bitmap("C:\\Users\\dahal\\OneDrive\\Desktop\\Pointer.png");
+                Bitmap resizedBmp = new Bitmap(bmp, new Size(30, 30));
+                this.Cursor = new Cursor(resizedBmp.GetHicon());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading cursor image: " + ex.Message);
+            }
         }
     }
 

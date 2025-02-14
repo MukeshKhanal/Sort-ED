@@ -276,6 +276,7 @@
             this.MaximizeBox = false;
             this.Name = "SorterWindow";
             this.Text = "SortED";
+            this.Load += new System.EventHandler(this.SorterWindow_Load);
             this.FileBrowser.ResumeLayout(false);
             this.FileBrowser.PerformLayout();
             this.Fileviewers.ResumeLayout(false);
