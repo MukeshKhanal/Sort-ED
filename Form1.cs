@@ -163,7 +163,7 @@ namespace SortED
         {
             try
             {
-                Bitmap bmp = new Bitmap("");
+                Bitmap bmp = new Bitmap("D:\\4 sem\\SortED\\Resources\\Pointer.png");
                 Bitmap resizedBmp = new Bitmap(bmp, new Size(30, 30));
                 this.Cursor = new Cursor(resizedBmp.GetHicon());
             }
