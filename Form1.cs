@@ -172,6 +172,16 @@ namespace SortED
                 MessageBox.Show("Error loading cursor image: " + ex.Message);
             }
         }
+
+        private void aboutbtn_Click(object sender, EventArgs e)
+        {
+            using (AboutUs about = new AboutUs())
+            {
+                about.ShowDialog();
+
+
+            }
+        }
     }
 
     public class Sorter

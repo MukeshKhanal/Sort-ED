@@ -102,7 +102,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(324, 303);
+            this.linkLabel1.Location = new System.Drawing.Point(384, 303);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(267, 19);
             this.linkLabel1.TabIndex = 5;
@@ -114,7 +114,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(350, 332);
+            this.linkLabel2.Location = new System.Drawing.Point(382, 332);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(289, 19);
             this.linkLabel2.TabIndex = 6;
@@ -126,7 +126,7 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(393, 362);
+            this.linkLabel3.Location = new System.Drawing.Point(425, 362);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(246, 19);
             this.linkLabel3.TabIndex = 7;
@@ -172,7 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SortED.Properties.Resources.bckg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(838, 475);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Ishan);
@@ -184,6 +184,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.WhoWeAre);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "AboutUs";
             this.Text = "AboutUs";
             this.ResumeLayout(false);

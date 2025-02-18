@@ -254,6 +254,7 @@
             this.aboutbtn.TabIndex = 3;
             this.aboutbtn.TabStop = false;
             this.abouttip.SetToolTip(this.aboutbtn, "About Us");
+            this.aboutbtn.Click += new System.EventHandler(this.aboutbtn_Click);
             // 
             // helpbtn
             // 
