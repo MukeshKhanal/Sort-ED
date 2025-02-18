@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SorterWindow));
             this.FileBrowser = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,19 +45,22 @@
             this.fileUploaded = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.navPanel = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.aboutbtn = new System.Windows.Forms.PictureBox();
+            this.helpbtn = new System.Windows.Forms.PictureBox();
+            this.homebtn = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sort = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.hometip = new System.Windows.Forms.ToolTip(this.components);
+            this.tiphelp = new System.Windows.Forms.ToolTip(this.components);
+            this.abouttip = new System.Windows.Forms.ToolTip(this.components);
             this.FileBrowser.SuspendLayout();
             this.Fileviewers.SuspendLayout();
             this.Uploaderpanel.SuspendLayout();
             this.navPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aboutbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homebtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,46 +235,54 @@
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.White;
-            this.navPanel.Controls.Add(this.pictureBox4);
-            this.navPanel.Controls.Add(this.pictureBox3);
-            this.navPanel.Controls.Add(this.pictureBox2);
+            this.navPanel.Controls.Add(this.aboutbtn);
+            this.navPanel.Controls.Add(this.helpbtn);
+            this.navPanel.Controls.Add(this.homebtn);
             this.navPanel.Controls.Add(this.pictureBox1);
             this.navPanel.Location = new System.Drawing.Point(12, 74);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(84, 520);
+            this.navPanel.Size = new System.Drawing.Size(86, 476);
             this.navPanel.TabIndex = 2;
             // 
-            // pictureBox4
+            // aboutbtn
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(7, 380);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(69, 60);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.aboutbtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutbtn.Image")));
+            this.aboutbtn.Location = new System.Drawing.Point(9, 391);
+            this.aboutbtn.Name = "aboutbtn";
+            this.aboutbtn.Size = new System.Drawing.Size(69, 63);
+            this.aboutbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.aboutbtn.TabIndex = 3;
+            this.aboutbtn.TabStop = false;
+            this.abouttip.SetToolTip(this.aboutbtn, "About Us");
             // 
-            // pictureBox3
+            // helpbtn
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(7, 268);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(69, 60);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.helpbtn.Image = ((System.Drawing.Image)(resources.GetObject("helpbtn.Image")));
+            this.helpbtn.Location = new System.Drawing.Point(9, 265);
+            this.helpbtn.Name = "helpbtn";
+            this.helpbtn.Size = new System.Drawing.Size(66, 63);
+            this.helpbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.helpbtn.TabIndex = 2;
+            this.helpbtn.TabStop = false;
+            this.tiphelp.SetToolTip(this.helpbtn, "Help");
             // 
-            // pictureBox2
+            // homebtn
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(7, 159);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(69, 69);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.homebtn.Image = ((System.Drawing.Image)(resources.GetObject("homebtn.Image")));
+            this.homebtn.Location = new System.Drawing.Point(9, 143);
+            this.homebtn.Name = "homebtn";
+            this.homebtn.Size = new System.Drawing.Size(69, 63);
+            this.homebtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.homebtn.TabIndex = 1;
+            this.homebtn.TabStop = false;
+            this.hometip.SetToolTip(this.homebtn, "Home");
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(66, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -290,6 +302,10 @@
             this.sort.Text = "Sort It";
             this.sort.UseVisualStyleBackColor = false;
             this.sort.Click += new System.EventHandler(this.sort_Click);
+            // 
+            // hometip
+            // 
+            this.hometip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // SorterWindow
             // 
@@ -318,9 +334,9 @@
             this.Uploaderpanel.ResumeLayout(false);
             this.Uploaderpanel.PerformLayout();
             this.navPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aboutbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.helpbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homebtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -346,9 +362,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox fileUploaded;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox aboutbtn;
+        private System.Windows.Forms.PictureBox helpbtn;
+        private System.Windows.Forms.PictureBox homebtn;
+        private System.Windows.Forms.ToolTip hometip;
+        private System.Windows.Forms.ToolTip abouttip;
+        private System.Windows.Forms.ToolTip tiphelp;
     }
 }
 
