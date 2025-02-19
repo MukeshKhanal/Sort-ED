@@ -161,15 +161,15 @@ namespace SortED
 
         private void SorterWindow_Load(object sender, EventArgs e)
         {
-            try
+            string relativePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "Pointer.ico");
+
+            if (File.Exists(relativePath))
             {
-                Bitmap bmp = new Bitmap("D:\\4 sem\\SortED\\Resources\\Pointer.png");
-                Bitmap resizedBmp = new Bitmap(bmp, new Size(30, 30));
-                this.Cursor = new Cursor(resizedBmp.GetHicon());
+                this.Cursor = new Cursor(new Icon(relativePath, new Size(30, 30)).Handle);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error loading cursor image: " + ex.Message);
+                MessageBox.Show("Cursor file not found: " + relativePath);
             }
         }
 

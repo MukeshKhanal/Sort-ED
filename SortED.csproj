@@ -122,5 +122,9 @@
   <ItemGroup>
     <None Include="Resources\3-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Pointer.ico" />
+    <Content Include="Resources\Pointer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
