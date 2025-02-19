@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace SortED
 {
@@ -17,6 +18,26 @@ namespace SortED
             InitializeComponent();
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string gitHubUrl = "https://github.com/Ishan-Dahal";
 
+            
+            System.Diagnostics.Process.Start(gitHubUrl);
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string gitHubUrl = "https://github.com/MukeshKhanal";
+
+
+            System.Diagnostics.Process.Start(gitHubUrl);
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string gitHubUrl = "https://github.com/nbishwok";
+            System.Diagnostics.Process.Start(gitHubUrl);
+        }
     }
 }

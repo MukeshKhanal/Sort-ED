@@ -108,6 +108,7 @@
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://github.com/Ishan-Dahal";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // linkLabel2
             // 
@@ -120,6 +121,7 @@
             this.linkLabel2.TabIndex = 6;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "https://github.com/MukeshKhanal";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel3
             // 
@@ -132,6 +134,7 @@
             this.linkLabel3.TabIndex = 7;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "https://github.com/nbishwok";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // Ishan
             // 
@@ -186,6 +189,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "AboutUs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AboutUs";
             this.ResumeLayout(false);
             this.PerformLayout();

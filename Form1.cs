@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
 
 
 namespace SortED
@@ -159,19 +160,7 @@ namespace SortED
 
         }
 
-        private void SorterWindow_Load(object sender, EventArgs e)
-        {
-            string relativePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "Pointer.ico");
-
-            if (File.Exists(relativePath))
-            {
-                this.Cursor = new Cursor(new Icon(relativePath, new Size(30, 30)).Handle);
-            }
-            else
-            {
-                MessageBox.Show("Cursor file not found: " + relativePath);
-            }
-        }
+      
 
         private void aboutbtn_Click(object sender, EventArgs e)
         {
