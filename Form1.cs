@@ -164,6 +164,7 @@ namespace SortED
 
         private void aboutbtn_Click(object sender, EventArgs e)
         {
+            
             using (AboutUs about = new AboutUs())
             {
                 about.ShowDialog();

@@ -308,15 +308,11 @@
             this.sort.UseVisualStyleBackColor = false;
             this.sort.Click += new System.EventHandler(this.sort_Click);
             // 
-            // hometip
-            // 
-            this.hometip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            // 
             // SorterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = global::SortED.Properties.Resources.bckg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1223, 786);
@@ -325,11 +321,13 @@
             this.Controls.Add(this.Uploaderpanel);
             this.Controls.Add(this.Fileviewers);
             this.Controls.Add(this.FileBrowser);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SorterWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SortED";
             this.FileBrowser.ResumeLayout(false);
             this.FileBrowser.PerformLayout();
