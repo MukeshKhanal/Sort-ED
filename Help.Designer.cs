@@ -109,6 +109,7 @@
             // Close
             // 
             this.Close.BackColor = System.Drawing.Color.Maroon;
+            this.Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Close.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Close.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Close.Location = new System.Drawing.Point(352, 369);
@@ -135,6 +136,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Help";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Help";
             this.Load += new System.EventHandler(this.Help_Load);
             this.ResumeLayout(false);
