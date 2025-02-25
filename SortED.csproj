@@ -127,6 +127,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Pointer.png" />
+    <None Include="Resources\WhatsApp Image 2025-02-24 at 1.37.23 PM.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

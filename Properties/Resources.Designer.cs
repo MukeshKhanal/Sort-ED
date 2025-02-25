@@ -79,5 +79,15 @@ namespace SortED.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_02_24_at_1_37_23_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-02-24 at 1.37.23 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
