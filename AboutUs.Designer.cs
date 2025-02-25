@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutUs));
             this.label1 = new System.Windows.Forms.Label();
             this.WhoWeAre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -187,6 +188,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.WhoWeAre);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AboutUs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
