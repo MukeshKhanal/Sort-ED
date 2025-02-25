@@ -39,5 +39,10 @@ namespace SortED
             string gitHubUrl = "https://github.com/nbishwok";
             System.Diagnostics.Process.Start(gitHubUrl);
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

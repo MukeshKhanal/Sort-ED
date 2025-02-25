@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Title
@@ -105,12 +106,26 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Now you have a clean folder with sorted files. Magic!!!";
             // 
+            // Close
+            // 
+            this.Close.BackColor = System.Drawing.Color.Maroon;
+            this.Close.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Close.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Close.Location = new System.Drawing.Point(352, 369);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(131, 36);
+            this.Close.TabIndex = 12;
+            this.Close.Text = "Close";
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SortED.Properties.Resources.bckg;
             this.ClientSize = new System.Drawing.Size(906, 491);
+            this.Controls.Add(this.Close);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -135,5 +150,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Close;
     }
 }

@@ -21,5 +21,10 @@ namespace SortED
         {
 
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

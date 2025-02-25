@@ -40,6 +40,7 @@
             this.Ishan = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -170,6 +171,19 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Nishant Bishwokarma - ";
             // 
+            // Close
+            // 
+            this.Close.BackColor = System.Drawing.Color.Maroon;
+            this.Close.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Close.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Close.Location = new System.Drawing.Point(337, 414);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(131, 36);
+            this.Close.TabIndex = 11;
+            this.Close.Text = "Close";
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            // 
             // AboutUs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +191,7 @@
             this.BackgroundImage = global::SortED.Properties.Resources.WhatsApp_Image_2025_02_24_at_1_37_23_PM;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(838, 475);
+            this.Controls.Add(this.Close);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Ishan);
@@ -211,5 +226,6 @@
         private System.Windows.Forms.Label Ishan;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Close;
     }
 }
