@@ -171,6 +171,16 @@ namespace SortED
 
             }
         }
+
+        private void helpbtn_Click(object sender, EventArgs e)
+        {
+            using (Help help = new Help())
+            {
+                help.ShowDialog();
+
+
+            }
+        }
     }
 
     public class Sorter

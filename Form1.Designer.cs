@@ -266,6 +266,7 @@
             this.helpbtn.TabIndex = 2;
             this.helpbtn.TabStop = false;
             this.tiphelp.SetToolTip(this.helpbtn, "Help");
+            this.helpbtn.Click += new System.EventHandler(this.helpbtn_Click);
             // 
             // homebtn
             // 
@@ -327,7 +328,6 @@
             this.MaximizeBox = false;
             this.Name = "SorterWindow";
             this.Text = "SortED";
-//            this.Load += new System.EventHandler(this.SorterWindow_Load);
             this.FileBrowser.ResumeLayout(false);
             this.FileBrowser.PerformLayout();
             this.Fileviewers.ResumeLayout(false);
