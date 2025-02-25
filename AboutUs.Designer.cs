@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutUs));
             this.label1 = new System.Windows.Forms.Label();
             this.WhoWeAre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.Ishan = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.closebtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -170,13 +170,29 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Nishant Bishwokarma - ";
             // 
+            // closebtn
+            // 
+            this.closebtn.BackColor = System.Drawing.Color.Crimson;
+            this.closebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.closebtn.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closebtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.closebtn.Location = new System.Drawing.Point(398, 424);
+            this.closebtn.Name = "closebtn";
+            this.closebtn.Size = new System.Drawing.Size(167, 40);
+            this.closebtn.TabIndex = 11;
+            this.closebtn.Text = "Ok";
+            this.closebtn.UseVisualStyleBackColor = false;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
+            // 
             // AboutUs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SortED.Properties.Resources.bckg;
+            this.BackgroundImage = global::SortED.Properties.Resources.WhatsApp_Image_2025_02_24_at_1_37_23_PM;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(838, 475);
+            this.ClientSize = new System.Drawing.Size(913, 521);
+            this.Controls.Add(this.closebtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Ishan);
@@ -210,5 +226,6 @@
         private System.Windows.Forms.Label Ishan;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button closebtn;
     }
 }
