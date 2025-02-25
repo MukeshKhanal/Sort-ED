@@ -175,7 +175,7 @@
             this.closebtn.BackColor = System.Drawing.Color.Crimson;
             this.closebtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.closebtn.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closebtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closebtn.ForeColor = System.Drawing.SystemColors.Window;
             this.closebtn.Location = new System.Drawing.Point(398, 424);
             this.closebtn.Name = "closebtn";
