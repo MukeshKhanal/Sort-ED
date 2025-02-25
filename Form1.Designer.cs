@@ -246,6 +246,7 @@
             // 
             // aboutbtn
             // 
+            this.aboutbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.aboutbtn.Image = ((System.Drawing.Image)(resources.GetObject("aboutbtn.Image")));
             this.aboutbtn.Location = new System.Drawing.Point(9, 391);
             this.aboutbtn.Name = "aboutbtn";
@@ -258,6 +259,7 @@
             // 
             // helpbtn
             // 
+            this.helpbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.helpbtn.Image = ((System.Drawing.Image)(resources.GetObject("helpbtn.Image")));
             this.helpbtn.Location = new System.Drawing.Point(9, 265);
             this.helpbtn.Name = "helpbtn";
@@ -270,6 +272,7 @@
             // 
             // homebtn
             // 
+            this.homebtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homebtn.Image = ((System.Drawing.Image)(resources.GetObject("homebtn.Image")));
             this.homebtn.Location = new System.Drawing.Point(9, 143);
             this.homebtn.Name = "homebtn";
