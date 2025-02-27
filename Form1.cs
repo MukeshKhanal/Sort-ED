@@ -182,6 +182,14 @@ namespace SortED
 
             }
         }
+
+        private void view_Click(object sender, EventArgs e)
+        {
+            using (ViewMore history= new ViewMore())
+            {
+                history.ShowDialog();
+            }
+        }
     }
 
     public class Sorter
@@ -258,6 +266,13 @@ namespace SortED
     {
         public string FileName { get; set; }
         public Icon FileIcon { get; set; }
+    }
+
+
+    public class DatabaseHelper
+    {
+
+
     }
 }
 

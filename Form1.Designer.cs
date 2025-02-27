@@ -185,6 +185,7 @@
             this.view.TabIndex = 4;
             this.view.Text = "View More";
             this.view.UseVisualStyleBackColor = false;
+            this.view.Click += new System.EventHandler(this.view_Click);
             // 
             // Searchbtn
             // 
