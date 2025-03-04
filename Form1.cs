@@ -155,8 +155,16 @@ namespace SortED
             sortManager.SortFiles(selectedFiles,destpath);
             fileUploaded.Items.Clear();
             selectedFiles.Clear();
+            using (loadingwindow loading = new loadingwindow())
+            {
+                loading.ShowDialog();
+                MessageBox.Show("Sucefully Sorted");
+                loading.Close();
 
-            MessageBox.Show("Sucefully Sorted");
+
+            }
+
+            
 
         }
 
