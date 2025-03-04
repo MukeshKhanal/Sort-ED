@@ -27,7 +27,7 @@ namespace SortED
             if (progressBar1.Value < progressBar1.Maximum)
             {
                
-                progressBar1.Value += 2; //We might need to change speed
+                progressBar1.Value += 3; //We might need to change speed
                 sorting_text.Text = "Sorted";
 
             }
