@@ -31,7 +31,7 @@ namespace SortED
             ApplyRoundedCorners(browse, 20);
             ApplyRoundedCorners(sort, 20);
             ApplyRoundedCorners(view, 20);
-            ApplyRoundedCorners(Searchbtn, 20);
+            
             ApplyRoundedCorners(Uploaderpanel, 20);
             ApplyRoundedCorners(Fileviewers, 20);
 
@@ -152,17 +152,11 @@ namespace SortED
             string destpath = DestMgmer.GetDestination();
             if (string.IsNullOrEmpty(destpath)) return;
 
+           
             sortManager.SortFiles(selectedFiles,destpath);
             fileUploaded.Items.Clear();
             selectedFiles.Clear();
-            using (loadingwindow loading = new loadingwindow())
-            {
-                loading.ShowDialog();
-                MessageBox.Show("Sucefully Sorted");
-                loading.Close();
-
-
-            }
+           
 
             
 
@@ -193,20 +187,35 @@ namespace SortED
 
         private void view_Click(object sender, EventArgs e)
         {
-            using (ViewMore history= new ViewMore())
+            string historyFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SortED", "SortHistory.csv");
+
+            if (File.Exists(historyFile))
             {
-                history.ShowDialog();
+                sortManager.ConvertCsvToHtml();
+            }
+            else
+            {
+                MessageBox.Show("No sorting history found.");
             }
         }
+
     }
 
     public class Sorter
     {
+        private static string csvFilePath = Path.Combine( Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SortED", "SortHistory.csv");
         public void SortFiles(List<string> files, string destinationPath)
         {
             if (!Directory.Exists(destinationPath))
             {
                 Directory.CreateDirectory(destinationPath);
+            }
+            if (!File.Exists(csvFilePath))
+            {
+                using (var writer = new StreamWriter(csvFilePath, false))
+                {
+                    writer.WriteLine("File Name,Original Path,Sorted Path");
+                }
             }
             foreach (var file in files)
             {
@@ -226,15 +235,112 @@ namespace SortED
 
                 while (File.Exists(newDest))
                 {
-                    newDest = Path.Combine(folderDestination + Path.GetFileNameWithoutExtension(file)+ filecount + Path.GetFileName(file));
+                    newDest = Path.Combine(folderDestination + Path.GetFileNameWithoutExtension(file) + filecount + Path.GetFileName(file));
 
                 }
 
                 File.Move(file, newDest);
+                InsertFileRecord(Path.GetFileName(file), file, newDest);
 
             }
+        }
+            public void ConvertCsvToHtml()
+        {
+            string csvPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SortED", "SortHistory.csv");
+            string htmlPath = Path.ChangeExtension(csvPath, ".html");
+
+            if (!File.Exists(csvPath)) return;
+
+            string[] lines = File.ReadAllLines(csvPath);
+            if (lines.Length == 0) return;
+
+            using (StreamWriter sw = new StreamWriter(htmlPath))
+            {
+                sw.WriteLine("<!DOCTYPE html>");
+                sw.WriteLine("<html><head><meta charset='UTF-8'><title>SortED File History</title>");
+                sw.WriteLine("<style>");
+                sw.WriteLine("body {");
+                sw.WriteLine("  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;");
+                sw.WriteLine("  margin: 0;");
+                sw.WriteLine("  padding: 40px;");
+                sw.WriteLine("  background: linear-gradient(135deg, #e0eafc, #cfdef3);");
+                sw.WriteLine("  color: #333;");
+                sw.WriteLine("}");
+
+                sw.WriteLine("h2 {");
+                sw.WriteLine("  text-align: center;");
+                sw.WriteLine("  font-size: 2.5rem;");
+                sw.WriteLine("  margin-bottom: 30px;");
+                sw.WriteLine("  color: #1a237e;");
+                sw.WriteLine("  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);");
+                sw.WriteLine("}");
+
+                sw.WriteLine("table {");
+                sw.WriteLine("  width: 100%;");
+                sw.WriteLine("  border-collapse: collapse;");
+                sw.WriteLine("  background: white;");
+                sw.WriteLine("  box-shadow: 0 4px 12px rgba(0,0,0,0.1);");
+                sw.WriteLine("  border-radius: 12px;");
+                sw.WriteLine("  overflow: hidden;");
+                sw.WriteLine("}");
+
+                sw.WriteLine("th, td {");
+                sw.WriteLine("  padding: 14px 20px;");
+                sw.WriteLine("  text-align: left;");
+                sw.WriteLine("}");
+
+                sw.WriteLine("th {");
+                sw.WriteLine("  background: #3949ab;");
+                sw.WriteLine("  color: white;");
+                sw.WriteLine("  font-size: 1.1rem;");
+                sw.WriteLine("  text-transform: uppercase;");
+                sw.WriteLine("  letter-spacing: 1px;");
+                sw.WriteLine("}");
+
+                sw.WriteLine("tr:nth-child(even) { background-color: #f4f6fc; }");
+                sw.WriteLine("tr:hover { background-color: #e8eaf6; transition: background-color 0.3s ease; }");
+                sw.WriteLine("td { font-size: 0.95rem; }");
+                sw.WriteLine("</style>");
+                sw.WriteLine("</head><body><h2>SortED - Sorting History</h2>");
+                sw.WriteLine("<table>");
 
 
+                string[] headers = lines[0].Split(',');
+                sw.WriteLine("<tr>");
+                foreach (string header in headers)
+                {
+                    sw.WriteLine($"<th>{System.Net.WebUtility.HtmlEncode(header)}</th>");
+                }
+                sw.WriteLine("</tr>");
+
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    string[] cols = lines[i].Split(',');
+                    sw.WriteLine("<tr>");
+                    foreach (string col in cols)
+                    {
+                        sw.WriteLine($"<td>{System.Net.WebUtility.HtmlEncode(col)}</td>");
+                    }
+                    sw.WriteLine("</tr>");
+                }
+
+                sw.WriteLine("</table></body></html>");
+            }
+
+            System.Diagnostics.Process.Start("explorer", htmlPath);
+        }
+
+
+
+
+
+        
+        private void InsertFileRecord(string fileName, string originalPath, string sortedPath)
+        {
+            using (var writer = new StreamWriter(csvFilePath, true))
+            {
+                writer.WriteLine($"{fileName},{originalPath},{sortedPath}"); 
+            }
         }
     }
     public class DestMgmer
@@ -277,12 +383,9 @@ namespace SortED
     }
 
 
-    public class DatabaseHelper
-    {
-
-
-    }
+   
 }
+
 
 
 
