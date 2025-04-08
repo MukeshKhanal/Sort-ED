@@ -122,18 +122,12 @@ namespace SortED
 
         private void FileBrowser_DragEnter(object sender, DragEventArgs e)
         {
-
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                string[] filenames = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-                foreach (string file in filenames)
-                {
-                    string FileGoodName = Path.GetFileName(file.Trim());
-                    fileUploaded.Items.Add(FileGoodName);  
-                }
+                e.Effect = DragDropEffects.Copy;
             }
         }
+
 
         private void FileBrowser_DragLeave(object sender, EventArgs e)
         {
