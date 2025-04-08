@@ -151,6 +151,7 @@ namespace SortED
             }
             string destpath = DestMgmer.GetDestination();
             if (string.IsNullOrEmpty(destpath)) return;
+            MessageBox.Show("Your Files have been sorted");
 
            
             sortManager.SortFiles(selectedFiles,destpath);
@@ -244,7 +245,7 @@ namespace SortED
 
             }
         }
-            public void ConvertCsvToHtml()
+        public void ConvertCsvToHtml()
         {
             string csvPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SortED", "SortHistory.csv");
             string htmlPath = Path.ChangeExtension(csvPath, ".html");
@@ -266,7 +267,6 @@ namespace SortED
                 sw.WriteLine("  background: linear-gradient(135deg, #e0eafc, #cfdef3);");
                 sw.WriteLine("  color: #333;");
                 sw.WriteLine("}");
-
                 sw.WriteLine("h2 {");
                 sw.WriteLine("  text-align: center;");
                 sw.WriteLine("  font-size: 2.5rem;");
@@ -274,7 +274,15 @@ namespace SortED
                 sw.WriteLine("  color: #1a237e;");
                 sw.WriteLine("  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);");
                 sw.WriteLine("}");
-
+                sw.WriteLine("input[type='text'] {");
+                sw.WriteLine("  width: 100%;");
+                sw.WriteLine("  padding: 12px;");
+                sw.WriteLine("  margin-bottom: 20px;");
+                sw.WriteLine("  border: 1px solid #ccc;");
+                sw.WriteLine("  border-radius: 8px;");
+                sw.WriteLine("  font-size: 16px;");
+                sw.WriteLine("  box-shadow: 0 2px 4px rgba(0,0,0,0.1);");
+                sw.WriteLine("}");
                 sw.WriteLine("table {");
                 sw.WriteLine("  width: 100%;");
                 sw.WriteLine("  border-collapse: collapse;");
@@ -283,12 +291,10 @@ namespace SortED
                 sw.WriteLine("  border-radius: 12px;");
                 sw.WriteLine("  overflow: hidden;");
                 sw.WriteLine("}");
-
                 sw.WriteLine("th, td {");
                 sw.WriteLine("  padding: 14px 20px;");
                 sw.WriteLine("  text-align: left;");
                 sw.WriteLine("}");
-
                 sw.WriteLine("th {");
                 sw.WriteLine("  background: #3949ab;");
                 sw.WriteLine("  color: white;");
@@ -296,14 +302,17 @@ namespace SortED
                 sw.WriteLine("  text-transform: uppercase;");
                 sw.WriteLine("  letter-spacing: 1px;");
                 sw.WriteLine("}");
-
                 sw.WriteLine("tr:nth-child(even) { background-color: #f4f6fc; }");
                 sw.WriteLine("tr:hover { background-color: #e8eaf6; transition: background-color 0.3s ease; }");
                 sw.WriteLine("td { font-size: 0.95rem; }");
                 sw.WriteLine("</style>");
-                sw.WriteLine("</head><body><h2>SortED - Sorting History</h2>");
-                sw.WriteLine("<table>");
+                sw.WriteLine("</head><body>");
+                sw.WriteLine("<h2>SortED - Sorting History</h2>");
 
+                
+                sw.WriteLine("<input type='text' id='searchInput' placeholder='Search by file name or path...'>");
+
+                sw.WriteLine("<table>");
 
                 string[] headers = lines[0].Split(',');
                 sw.WriteLine("<tr>");
@@ -324,7 +333,21 @@ namespace SortED
                     sw.WriteLine("</tr>");
                 }
 
-                sw.WriteLine("</table></body></html>");
+                sw.WriteLine("</table>");
+
+
+                sw.WriteLine("<script>");
+                sw.WriteLine("document.getElementById('searchInput').addEventListener('keyup', function() {");
+                sw.WriteLine("  var filter = this.value.toLowerCase();");
+                sw.WriteLine("  var rows = document.querySelectorAll('table tr');");
+                sw.WriteLine("  for (var i = 1; i < rows.length; i++) {");
+                sw.WriteLine("    var rowText = rows[i].textContent.toLowerCase();");
+                sw.WriteLine("    rows[i].style.display = rowText.includes(filter) ? '' : 'none';");
+                sw.WriteLine("  }");
+                sw.WriteLine("});");
+                sw.WriteLine("</script>");
+
+                sw.WriteLine("</body></html>");
             }
 
             System.Diagnostics.Process.Start("explorer", htmlPath);
@@ -334,7 +357,8 @@ namespace SortED
 
 
 
-        
+
+
         private void InsertFileRecord(string fileName, string originalPath, string sortedPath)
         {
             using (var writer = new StreamWriter(csvFilePath, true))
