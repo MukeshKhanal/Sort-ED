@@ -24,6 +24,11 @@ namespace SortED
         public SorterWindow()
         {
             InitializeComponent();
+            string sortedDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SortED");
+            if (!Directory.Exists(sortedDir))
+            {
+                Directory.CreateDirectory(sortedDir);
+            }
             fileUploaded.DrawMode = DrawMode.OwnerDrawFixed;
             fileUploaded.DrawItem += new DrawItemEventHandler(fileUploaded_DrawItem);
 
@@ -109,7 +114,7 @@ namespace SortED
                 foreach (string i in filenames)
                 {
                     string FileGoodName = Path.GetFileName(i.Trim());
-                    selectedFiles.Add(FileGoodName);
+                    selectedFiles.Add(i);
                     iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(i);
 
 
